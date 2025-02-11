@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { useState } from 'react';
+import MainLayout from "./layouts/MainLayout";
 import './App.css'
+import Navbar from './scenes/navbar';
+import {SelectedPage} from "../src/shared/types";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
 
   return (
     <>
-      <div className='flex gap-3.5 '>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
+      <div className='app'>
+        <MainLayout>
+          <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+        </MainLayout>
+
       </div>
+
 
     </>
   )
