@@ -3,13 +3,11 @@
 
 @theme {
   --poppins: "Poppins", "sans-serif";
-  --breakpoint-xs: 480px;
+  --breakpoint-xs: 380px;
   --breakpoint-sm: 780px;
   --breakpoint-md: 1060px;
-  --text-blue: "blue";
 
- 
-
+  --color-accent: #3029D9;
   /* ... */
 }
 
@@ -17,12 +15,9 @@ html,
 Body,
 #root,
 .app {
-  
   font-family: "Poppins", "sans-serif";
   height: 100%;
 }
 
-.app {
-  
-}
+
 
