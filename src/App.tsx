@@ -5,6 +5,8 @@ import MainLayout from "./layouts/MainLayout";
 import Navbar from './scenes/navbar';
 import { SelectedPage } from "../src/shared/types";
 import Home from './scenes/home';
+import AboutUs from './scenes/aboutUs';
+import SecondLayout from './layouts/SecondLayout';
 
 
 function App() {
@@ -22,17 +24,19 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <>
-      <div className='app'>
-        <MainLayout>
-          <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-          <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-        </MainLayout>
 
-      </div>
+    <div className='app'>
+      <MainLayout>
+        <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+        <Home setSelectedPage={setSelectedPage} />
 
+      </MainLayout>
+      <SecondLayout>
+        <AboutUs  setSelectedPage={setSelectedPage} />
+      </SecondLayout>
 
-    </>
+    </div>
+
   )
 }
 

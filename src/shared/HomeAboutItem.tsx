@@ -7,10 +7,11 @@ import { useInView } from "react-intersection-observer";
 type Props = {
   text: string;
   value: string;
+  showIcon?: boolean;
 };
 
 
-const HomeAboutItem: React.FC<Props> = ({ text, value }) => {
+const HomeAboutItem: React.FC<Props> = ({ text, value, showIcon = true  }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, 
     threshold: 0.5, 
@@ -22,10 +23,10 @@ const HomeAboutItem: React.FC<Props> = ({ text, value }) => {
 
   return (
     <div ref={ref} className="flex items-center">
-      <img className="mt-3" src={GameIcon} alt="" />
+      {showIcon && <img className="mt-3" src={GameIcon} alt="" />}
       <div className="text-accent">
         <p className="pb-2 font-bold text-5xl">
-        {inView ? (
+        {inView ? (    
             <CountUp
               end={numericPart} 
               duration={1.5} 
